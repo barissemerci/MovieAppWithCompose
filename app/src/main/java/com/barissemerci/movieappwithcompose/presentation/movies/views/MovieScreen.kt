@@ -48,9 +48,9 @@ fun MovieScreen(navController: NavController, viewModel: MoviesViewModel = hiltV
             )
             LazyColumn(modifier = Modifier.fillMaxSize()) {
                 items(state.movies) { movie ->
-                   MovieListRow(movie = movie, onItemClick ={
-                 //      navController.navigate(Screen.MovieDetailScreen.route+"/${movie.imdbID}")
-                   } )
+                    MovieListRow(movie = movie, onItemClick = {
+                        navController.navigate(Screen.MovieDetailScreen.route + "/${movie.imdbID}")
+                    })
                 }
             }
         }
@@ -90,7 +90,7 @@ fun MovieSearchBar(modifier: Modifier, hint: String = "", onSearch: (String) -> 
                     color = Color.White,
                     CircleShape
                 )
-                .padding(horizontal=20.dp)
+                .padding(horizontal = 20.dp)
                 .onFocusChanged {
                     isHintDisplayed = it.isFocused != true and text.isEmpty()
                 }

@@ -28,6 +28,4 @@ object AppModule {
     fun provideMovieRepository(api: MovieAPI): MovieRepository {
         return MovieRepositoryImpl(api)
     }
-
-
 }
